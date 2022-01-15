@@ -13,5 +13,8 @@ namespace YShopSolution.Data.Entities
         public decimal Price { set; get; }
         public string Description { get; set; }
         public string Image { get; set; }
+
+        public int CateroryId { get; set; }
+        public Caterory Caterory { get; set; }
     }
 }

@@ -14,9 +14,11 @@ namespace YShopSolution.Data.Entities
         public string Address { get; set; }
         public string Avatar { get; set; }
         public DateTime DoB { get; set; }
-
+    
         public List<Order> Orders { get; set; }
 
         public List<Cart> Carts { get; set; }
+
+        public AppRole Role { get; set; }
     }
 }
