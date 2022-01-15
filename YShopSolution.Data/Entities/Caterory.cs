@@ -12,5 +12,6 @@ namespace YShopSolution.Data.Entities
         public string Name { set; get; }
         public string Image { set; get; }
         public string Description { set; get; }
+        public List<Item> Items { get; set; }
     }
 }
