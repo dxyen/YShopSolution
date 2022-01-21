@@ -14,7 +14,7 @@ namespace YShopSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<Caterory> builder)
         {
             builder.Property(x => x.Description).IsRequired(false);
-            builder.Property(x => x.Image).IsRequired();
+            builder.Property(x => x.Image).IsRequired(false);
             builder.Property(x => x.Name).IsRequired();
 
         }
