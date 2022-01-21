@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YShopSolution.Data.Configurations;
 using YShopSolution.Data.Entities;
+using YShopSolution.Data.Extensions;
 
 namespace YShopSolution.Data.EF
 {
@@ -28,6 +29,8 @@ namespace YShopSolution.Data.EF
                 .ApplyConfiguration(new CateroryConfiguration())
                 .ApplyConfiguration(new CommentConfiguration())
                 .ApplyConfiguration(new BannerConfiguration());
+            //Data seeding
+            modelBuilder.Seed();
         }
         public DbSet<Item> Items { get; set; }
         public DbSet<Caterory> Caterories { get; set; }
