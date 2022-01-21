@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +12,13 @@ using YShopSolution.Data.Extensions;
 
 namespace YShopSolution.Data.EF
 {
-    public class YShopDbcontext : DbContext
+    public class YShopDbcontext : IdentityDbContext<AppUser, AppRole, Guid>
     {
 
         public YShopDbcontext( DbContextOptions options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -29,6 +32,14 @@ namespace YShopSolution.Data.EF
                 .ApplyConfiguration(new CateroryConfiguration())
                 .ApplyConfiguration(new CommentConfiguration())
                 .ApplyConfiguration(new BannerConfiguration());
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+
             //Data seeding
             modelBuilder.Seed();
         }
@@ -39,8 +50,5 @@ namespace YShopSolution.Data.EF
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-
-        public DbSet<AppUser> AppUsers { get; set; }
-        public DbSet<AppRole> AppRoles { get; set; }
     }
 }

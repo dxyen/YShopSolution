@@ -12,7 +12,7 @@ namespace YShopSolution.Data.Entities
         public int Id { get; set; }
         public Status Status { get; set; }
         public Guid UserId { get; set; }
-        public AppUser User { get; set; }
+        //public AppUser User { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public DateTime? DateModified { get; set; }
         public DateTime? DateDeleted { get; set; }

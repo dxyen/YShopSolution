@@ -13,7 +13,7 @@ namespace YShopSolution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Cart> builder)
         {
-            builder.HasKey(k => new { k.ItemId, k.UserId });
+            builder.HasKey(k => new { k.UserId, k.ItemId});
             builder.Property(x => x.Amount).HasDefaultValue(1);
 
         }
