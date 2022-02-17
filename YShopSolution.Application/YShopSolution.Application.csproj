@@ -20,4 +20,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="System\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YShopSolution.ViewModels\YShopSolution.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
