@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YShopSolution.Application\YShopSolution.Application.csproj" />
+    <ProjectReference Include="..\YShopSolution.Data\YShopSolution.Data.csproj" />
+    <ProjectReference Include="..\YShopSolution.Utilities\YShopSolution.Utilities.csproj" />
+    <ProjectReference Include="..\YShopSolution.ViewModels\YShopSolution.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

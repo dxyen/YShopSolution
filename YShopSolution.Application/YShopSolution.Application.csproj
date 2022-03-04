@@ -18,6 +18,16 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="System\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YShopSolution.Data\YShopSolution.Data.csproj" />
+    <ProjectReference Include="..\YShopSolution.ViewModels\YShopSolution.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
