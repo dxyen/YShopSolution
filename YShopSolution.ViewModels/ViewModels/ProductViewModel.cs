@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YShopSolution.ViewModels
+namespace YShopSolution.ViewModels.ViewModels
 {
-    public class ProductCreateRequest
+    public class ProductViewModel
     {
-        public int CategoryId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public decimal OriginalPrice { get; set; }
         public string Description { get; set; }
+        public string CategoryName { get; set; }
+        public int CategoryId { get; set; }
     }
 }

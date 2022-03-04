@@ -8,6 +8,8 @@ namespace YShopSolution.Data.Entities
 {
     public class Item
     {
+        public object Category;
+
         public int Id { set; get; }
         public string Name { set; get; }
         public decimal Price { set; get; }
