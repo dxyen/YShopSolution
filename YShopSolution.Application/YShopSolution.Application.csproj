@@ -22,10 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="System\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\YShopSolution.Data\YShopSolution.Data.csproj" />
     <ProjectReference Include="..\YShopSolution.ViewModels\YShopSolution.ViewModels.csproj" />
   </ItemGroup>
