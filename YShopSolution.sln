@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YShopSolution.Utilities", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YShopSolution.ViewModels", "YShopSolution.ViewModels\YShopSolution.ViewModels.csproj", "{3A56FCFF-DE83-4C08-B55A-B4B0092B9CB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YShopSolution.BackendApi", "YShopSolution.BackendApi\YShopSolution.BackendApi.csproj", "{E297A327-7816-4603-8C7A-E044AD348EC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YShopSolution.BackendApi", "YShopSolution.BackendApi\YShopSolution.BackendApi.csproj", "{E297A327-7816-4603-8C7A-E044AD348EC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

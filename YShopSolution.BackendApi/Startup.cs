@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +13,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using YShopSolution.Application.Interfaces;
 using YShopSolution.Application.Services;
+using YShopSolution.Application.System.Users;
 using YShopSolution.Data.EF;
+using YShopSolution.Data.Entities;
 
 namespace YShopSolution.BackendApi
 {
@@ -31,9 +34,18 @@ namespace YShopSolution.BackendApi
             services.AddDbContext<YShopDbcontext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("YShopSolutionDb")));
             services.AddControllers();
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<YShopDbcontext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+            services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddTransient<IUserService, UserService>();
 
+            string issuer = Configuration.GetValue<string>("Tokens:Issuer");
+            string signingKey = Configuration.GetValue<string>("Tokens:Key");
             services.AddControllersWithViews();
 
             // swagger config
